@@ -1,0 +1,12 @@
+import random
+import string
+
+numberofpasswords = input("How many passwords shall there be? ")
+lengthofpassword = input("How long shalt the password be? ")
+
+for x in range(0,int(numberofpasswords)):
+	passwordstring = ""
+	for x in range(0,int(lengthofpassword)):
+		passwordstring += random.choice(string.ascii_letters)
+		
+	print(passwordstring)

@@ -1,0 +1,45 @@
+#Welcome to cipher day! write a program that can encrypt texts with an alphabetical caesar cipher. This cipher can ignore numbers, symbols, and whitespace.for extra credit, add a "decrypt" function to your program!
+
+
+def Encrypt(string):
+	EncryptionThroughput = []
+	for x in string:
+		EncryptionThroughput.append(ord(x)+3)
+	return EncryptionThroughput
+	
+def Decrypt(list):
+	EncryptionThroughput = []
+	newstring = ""
+	for x in list:
+		EncryptionThroughput.append(x-3)
+	for x in EncryptionThroughput:
+		newstring += chr(x)
+	return newstring
+
+Midway = []	
+StartingString = ""
+FinalString = ""
+
+while True:
+	print("\n")
+	print("1: Insert a String")
+	print("2: Encrypt the String")
+	print("3: Decrypt the string")
+	
+	menuchoice = input("What would you like to do? ")
+	
+	if int(menuchoice) == 1:
+		StartingString = input("Input a string for encryption: ")
+		FinalString = ""
+	elif int(menuchoice) == 2:
+		if Midway == []:
+			Midway = Encrypt(StartingString)
+		StartingString = ""
+		print("Your Encrypted string is: " + str(Midway))
+	elif int(menuchoice) == 3:
+		if FinalString == "":
+			FinalString = Decrypt(Midway)
+		print(FinalString)
+		Midway = ""
+		
+

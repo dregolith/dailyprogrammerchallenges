@@ -7,5 +7,5 @@ while True:
 	
 	print("\nYour name is " + Name + ", and your age is " + Age + ", and your username is " + Username + ".\n")
 
-	with file("EC1Data.txt","a") as out_file:
+	with open("EC1Data.txt","a") as out_file:
 		out_file.write(Name+","+Age+","+Username+",")
